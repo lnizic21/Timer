@@ -1,0 +1,40 @@
+# Node modules
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependency directories
+jspm_packages/
+bower_components/
+
+# Build directories
+dist/
+build/
+
+# Environment variables
+.env
+
+# Editor directories and files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Prettier
+.prettierignore
+.prettierrc
+.prettierrc.json
+.prettierrc.yaml
+.prettierrc.yml
+.prettierrc.toml
+.prettierrc.js
+.prettierrc.cjs
+.prettier.config.js
+.prettier.config.cjs

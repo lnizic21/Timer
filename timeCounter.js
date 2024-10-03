@@ -4,6 +4,7 @@ let timer = document.getElementById("timer");
 
 let startTime;
 let intervalId;
+let figure;
 let elapsedTimeElement = document.createElement("p");
 
 // Set styles directly using the style property
@@ -28,6 +29,9 @@ function displayElapsedTime() {
 function startClock() {
   startTime = new Date();
   intervalId = setInterval(displayElapsedTime, 1000);
+  if (document.contains(figure)) {
+    figure.remove();
+  }
 }
 
 function stopClock() {
@@ -45,25 +49,27 @@ function stopClock() {
   elapsedTimeElement.innerText = `Elapsed time: ${formattedTime}`;
 
   // Create a figure element to hold the video and caption
-let figure = document.createElement("figure");
+  let figure = document.createElement("figure");
 
-// Create and configure the video element
-let video = document.createElement("video");
-video.width = 600;
-video.height = 400;
-video.controls = true;
-video.innerHTML = '<source src="WhatsApp Video 2024-10-02 at 19.26.24.mp4" type="video/mp4">Your browser does not support the video tag.';
+  var video = document.createElement("video");
+  // Create and configure the video element
+  let video = document.createElement("video");
+  video.width = 600;
+  video.height = 400;
+  video.controls = true;
+  video.innerHTML =
+    '<source src="WhatsApp Video 2024-10-02 at 19.26.24.mp4" type="video/mp4">Your browser does not support the video tag.';
 
-// Create and configure the figcaption element
-let figcaption = document.createElement("figcaption");
-figcaption.innerText = "To Amigooooo!!!";
+  // Create and configure the figcaption element
+  let figcaption = document.createElement("figcaption");
+  figcaption.innerText = "To Amigooooo!!!";
 
-// Append the video and caption to the figure
-figure.appendChild(video);
-figure.appendChild(figcaption);
+  // Append the video and caption to the figure
+  figure.appendChild(video);
+  figure.appendChild(figcaption);
 
-// Append the figure to the DOM
-document.body.appendChild(figure);
+  // Append the figure to the DOM
+  document.body.appendChild(figure);
   video.play();
 }
 
