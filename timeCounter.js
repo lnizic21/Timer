@@ -27,11 +27,13 @@ function displayElapsedTime() {
 }
 
 function startClock() {
+  if (figure && document.contains(figure)) {
+    figure.remove();
+    console.log("Figure removed");
+  }
+
   startTime = new Date();
   intervalId = setInterval(displayElapsedTime, 1000);
-  if (document.contains(figure)) {
-    figure.remove();
-  }
 }
 
 function stopClock() {
@@ -48,10 +50,12 @@ function stopClock() {
   let formattedTime = `${hours}h ${minutes}m ${seconds}s`;
   elapsedTimeElement.innerText = `Elapsed time: ${formattedTime}`;
 
-  // Create a figure element to hold the video and caption
-  let figure = document.createElement("figure");
+  // Append the elapsed time element to the DOM
+  document.body.appendChild(elapsedTimeElement);
 
-  var video = document.createElement("video");
+  // Create a figure element to hold the video and caption
+  figure = document.createElement("figure");
+
   // Create and configure the video element
   let video = document.createElement("video");
   video.width = 600;
@@ -70,6 +74,7 @@ function stopClock() {
 
   // Append the figure to the DOM
   document.body.appendChild(figure);
+  console.log(figure);
   video.play();
 }
 
