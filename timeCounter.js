@@ -65,6 +65,10 @@ document.addEventListener("DOMContentLoaded", function () {
     video.innerHTML =
       '<source src="WhatsApp Video 2024-10-02 at 19.26.24.mp4" type="video/mp4">Your browser does not support the video tag.';
 
+    video.classList.add("fade-in");
+    let body = document.querySelector("body");
+    body.classList.add("rainbow");
+
     // Create and configure the figcaption element
     let figcaption = document.createElement("figcaption");
     figcaption.innerText = "To Amigooooo!!!";

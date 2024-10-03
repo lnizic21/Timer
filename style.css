@@ -52,3 +52,70 @@ button#stop {
 button#stop:hover {
   background-color: #e53935;
 }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes rainbow {
+  0% {
+    background-color: red;
+  }
+  14% {
+    background-color: orange;
+  }
+  28% {
+    background-color: yellow;
+  }
+  42% {
+    background-color: green;
+  }
+  57% {
+    background-color: blue;
+  }
+  71% {
+    background-color: indigo;
+  }
+  85% {
+    background-color: violet;
+  }
+  100% {
+    background-color: red;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes changeSize {
+  from {
+    width: 600px;
+    height: 400px;
+  }
+  to {
+    width: 800px;
+    height: 533px;
+  }
+}
+
+.fade-in {
+  animation:
+    fadeIn 2s ease-in-out,
+    rotate 2s ease-in-out 2s,
+    changeSize 2s ease-in-out 4s;
+}
+
+.rainbow {
+  animation: rainbow 4s ease-in-out 2s;
+}
